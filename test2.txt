@@ -1,2 +1,6 @@
-def2 # 주석
+def2
+
+def 3
+
+def 4
 
