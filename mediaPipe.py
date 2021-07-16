@@ -1,6 +1,8 @@
 import cv2
 import mediapipe as mp
 import os
+from tqdm import tqdm
+from time import sleep
 
 mp_drawing = mp.solutions.drawing_utils
 mp_face_mesh = mp.solutions.face_mesh
@@ -15,11 +17,17 @@ files = os.listdir(path)
 for file in files:
     if '.png' in file:
         f = cv2.imread(file)
+        f = cv2.resize(f, dsize=(256, 256), interpolation=cv2.INTER_AREA) #이미지 256x256 resize
         IMAGE_FILES.append(f)
     if '.jpg' in file:
         f = cv2.imread(file)
+        f = cv2.resize(f, dsize=(256, 256), interpolation=cv2.INTER_AREA)
         IMAGE_FILES.append(f)
 # print(IMAGE_FILES)
+
+# 진행률
+# for i in tqdm(range(1, 600)):
+#     sleep(0.01)
 
 drawing_spec = mp_drawing.DrawingSpec(thickness=1, circle_radius=1)
 with mp_face_mesh.FaceMesh(
@@ -43,6 +51,6 @@ with mp_face_mesh.FaceMesh(
           connections=mp_face_mesh.FACE_CONNECTIONS,
           landmark_drawing_spec=drawing_spec,
           connection_drawing_spec=drawing_spec)
-    cv2.imwrite(path + 'tmp/annotated_image_' + str(idx) + '.png', annotated_image)
-    if not cv2.imwrite('tmp/annotated_image_' + str(idx) + '.png', annotated_image):
+    cv2.imwrite('./tmp/annotated_image_' + str(idx) + '.png', annotated_image)
+    if not cv2.imwrite('./tmp/annotated_image_' + str(idx) + '.png', annotated_image):
         raise Exception("Could not write image")
