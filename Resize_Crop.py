@@ -1,10 +1,10 @@
 import cv2
 import os
 
-path = 'C:/Users/user/Desktop/프로젝트/파이널프로젝트/face-mesh-generator-master/data/'   # 폴더 경로
+path = 'C:/final_project/final_project/data/'   # 폴더 경로
 os.chdir(path)
 
-IMAGE_FILES = [] # 이미지 리스트
+IMAGE_FILES = []  # 이미지 리스트
 
 files = os.listdir(path)
 for file in files:
@@ -17,7 +17,8 @@ for file in files:
 print(IMAGE_FILES)
 
 for idx, image in enumerate(IMAGE_FILES):
-    test_resize = cv2.resize(image, dsize=(256,256), interpolation=cv2.INTER_AREA)
+    test_resize = cv2.resize(image, dsize=(
+        256, 256), interpolation=cv2.INTER_AREA)
     cv2.imwrite('./tmp/resized_image_' + str(idx) + '.png', test_resize)
     if not cv2.imwrite('./tmp/resized_image_' + str(idx) + '.png', test_resize):
         raise Exception("Could not write image")
@@ -52,4 +53,3 @@ cv2.imwrite('detcted.jpg', img)
 cv2.imshow('img', img)
 cv2.waitKey()
 '''
-
