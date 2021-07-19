@@ -54,3 +54,26 @@ with mp_face_mesh.FaceMesh(
     cv2.imwrite('./tmp/annotated_image_' + str(idx) + '.png', annotated_image)
     if not cv2.imwrite('./tmp/annotated_image_' + str(idx) + '.png', annotated_image):
         raise Exception("Could not write image")
+
+
+
+### 얼굴 랜드마크 468개 순서체크 이미지 생성
+# print(results.multi_face_landmarks[0].landmark[0].y)
+num = 1
+for face in results.multi_face_landmarks:
+    for landmark in face.landmark:
+        x = landmark.x
+        y = landmark.y
+        z = landmark.z
+        print(f'{num}번째 랜드마크', x, y, z)
+
+        shape = image.shape
+        relative_x = int(x * shape[1])
+        relative_y = int(y * shape[0])
+        #
+        cv2.circle(image, (relative_x, relative_y), radius=1, color=(0, 255, 0), thickness=1)
+        cv2.imwrite('./coordinate/meshed_img_' + str(num) + '.png', image)
+        num += 1
+
+# cv2.imshow('dd', image)
+# cv2.waitKey(0)
