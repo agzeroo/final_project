@@ -77,5 +77,5 @@ for face in results.multi_face_landmarks:
         cv2.imwrite('./coordinate/meshed_img_' + str(num) + '.png', image)
         num += 1
 
-# cv2.imshow('dd', image)
-# cv2.waitKey(0)
+cv2.imshow('dd', image)
+cv2.waitKey(0)
