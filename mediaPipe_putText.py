@@ -18,11 +18,11 @@ for file in files:
     if '.png' in file:
         f = cv2.imread(file)
         # 이미지 256x256 resize
-        f = cv2.resize(f, dsize=(300, 300), interpolation=cv2.INTER_AREA)
+        f = cv2.resize(f, dsize=(1500, 1500), interpolation=cv2.INTER_AREA)
         IMAGE_FILES.append(f)
     if '.jpg' in file:
         f = cv2.imread(file)
-        f = cv2.resize(f, dsize=(300, 300), interpolation=cv2.INTER_AREA)
+        f = cv2.resize(f, dsize=(1500, 1500), interpolation=cv2.INTER_AREA)
         IMAGE_FILES.append(f)
 # print(IMAGE_FILES)
 
@@ -78,7 +78,7 @@ for face in results.multi_face_landmarks:
         num += 1
 
         cv2.putText(image, "{}".format(i + 1), (relative_x, relative_y - 2),
-                    cv2.FONT_HERSHEY_SIMPLEX, 0.3, (0, 255, 0), 1)
+                    cv2.FONT_HERSHEY_SIMPLEX, 0.3, (0, 0, 0), 1)
 
 
 cv2.imshow('dd', image)
