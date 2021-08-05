@@ -1,0 +1,157 @@
+[33mcommit 627de54e5cb6168d52cb27dcb29fa284966724e3[m[33m ([m[1;36mHEAD -> [m[1;32meyes_Mincheol[m[33m, [m[1;31morigin/eyes_Mincheol[m[33m)[m
+Author: jkl851 <jkl851@naver.com>
+Date:   Tue Jul 27 17:45:01 2021 +0900
+
+    눈 분류 수치 eyes.py 추가
+
+[33mcommit d5c4ee77b5d920725e750eea8c874a5b06c6c620[m[33m ([m[1;32mmaster[m[33m)[m
+Author: jkl851 <jkl851@naver.com>
+Date:   Thu Jul 22 17:04:30 2021 +0900
+
+    한국인 얼굴 이미지파일 필터링+리사이즈
+
+[33mcommit 5c6f7bed96d61d954f1144a951ce233c0c67f915[m
+Author: agzero <kibudy2@gmail.com>
+Date:   Tue Jul 20 15:59:43 2021 +0900
+
+    그남자사진
+
+[33mcommit 57081cac5a349571cb2cd432c4b7c4c99ffab115[m
+Author: agzero <kibudy2@gmail.com>
+Date:   Tue Jul 20 09:18:21 2021 +0900
+
+    test
+
+[33mcommit 2f4965d4c9771210e714ee84cefed3220cd63a60[m[33m ([m[1;31morigin/kang_test[m[33m)[m
+Author: agzero <kibudy2@gmail.com>
+Date:   Mon Jul 19 15:42:55 2021 +0900
+
+    put_text_좌표 표시
+
+[33mcommit f2ed0a0e9415c8d7de3ec0259d1f2fd9c599fff8[m
+Author: agzero <kibudy2@gmail.com>
+Date:   Mon Jul 19 15:40:18 2021 +0900
+
+    refernce
+
+[33mcommit 13e8cbbe5c36c3303ddf9dee262802bad1bdf9bd[m
+Author: agzero <kibudy2@gmail.com>
+Date:   Mon Jul 19 13:37:16 2021 +0900
+
+    경로로설정 변경
+
+[33mcommit 03fc63ffff3103f0e0580ceaed3bbe21e7417197[m
+Author: jkl851 <jkl851@naver.com>
+Date:   Mon Jul 19 12:42:13 2021 +0900
+
+    얼굴 좌표값 생성 추가
+
+[33mcommit 910519c471452e3caecfe7407b5fb25c6b2b8ef5[m
+Author: jkl851 <jkl851@naver.com>
+Date:   Fri Jul 16 17:37:56 2021 +0900
+
+    이미지 resize 256x256 추가
+
+[33mcommit 49615a539326949c959b626014f6bfb308d3a943[m
+Author: jkl851 <jkl851@naver.com>
+Date:   Fri Jul 16 13:38:16 2021 +0900
+
+    midiaPipe mesh files
+
+[33mcommit ba567d6a2097c680fd304f4457778d215e20b91e[m
+Author: Corinny <tmdgml0070@naver.com>
+Date:   Fri Jul 16 09:38:38 2021 +0900
+
+    dfdfdfd
+
+[33mcommit 8b6127c0211ac06095f8d9bda7b1b65acb8c8430[m
+Merge: 148d5de bdd4d01
+Author: Corinny <tmdgml6323@gmail.com>
+Date:   Fri Jul 16 09:30:21 2021 +0900
+
+     ddddddd
+
+[33mcommit 148d5de0f71509c3625ab256988664a40d7e2d4b[m
+Author: Corinny <tmdgml6323@gmail.com>
+Date:   Fri Jul 16 09:27:48 2021 +0900
+
+    git
+
+[33mcommit bdd4d01aa773e3c8256e21d7d2bbb995013143b6[m
+Author: jkl851 <kmcjkl851@gmail.com>
+Date:   Wed Jul 14 15:41:44 2021 +0900
+
+    test
+
+[33mcommit 1bc5505ecb3eda2ab987b51cbf1a53d4afb29fa4[m
+Author: kwakws0627 <kwakws0627@gmail.com>
+Date:   Wed Jul 14 15:37:10 2021 +0900
+
+    test
+
+[33mcommit f3690ac6e0099551f2bf8fe1529c4fca4c7024e7[m
+Author: Corinny <tmdgml6323@gmail.com>
+Date:   Wed Jul 14 15:07:14 2021 +0900
+
+    ahffk....
+
+[33mcommit 94a79f2ea8ea920cd58158d5bdf0c64ef8a182df[m
+Author: Corinny <tmdgml6323@gmail.com>
+Date:   Wed Jul 14 15:04:07 2021 +0900
+
+    fuck git
+
+[33mcommit 2be759c9173c2997e0fad22cb594cab208fd4ad4[m
+Author: Corinny <tmdgml6323@gmail.com>
+Date:   Wed Jul 14 14:43:30 2021 +0900
+
+    please.......\
+
+[33mcommit 5f8bf7c0cb92ae36bb441c41a50a30318edea1a4[m
+Author: AJHdata <kcw467@gmail.com>
+Date:   Wed Jul 14 14:23:30 2021 +0900
+
+    test
+
+[33mcommit 0017cc1450f4962b4db3e9dfe97104f94f6ae6c1[m
+Author: agzero <kibudy2@gmail.com>
+Date:   Wed Jul 14 14:05:16 2021 +0900
+
+    강은영test
+
+[33mcommit ff403203e562c69231ad246c9501e1d2db2830dd[m
+Author: agzero <kibudy2@gmail.com>
+Date:   Wed Jul 14 14:02:47 2021 +0900
+
+     del
+
+[33mcommit 246d3f4d56d60529c7df59d542f334654590fa96[m
+Merge: d644eae 166d64e
+Author: agzero <kibudy2@gmail.com>
+Date:   Wed Jul 14 13:14:30 2021 +0900
+
+    edit
+
+[33mcommit d644eaecab028d37470ce1a11509d9a76643faa4[m
+Author: agzero <kibudy2@gmail.com>
+Date:   Wed Jul 14 13:11:48 2021 +0900
+
+    add comment
+
+[33mcommit 166d64ef3306e28810911af7f2b80ecc010687eb[m
+Author: agzero <kibudy2@gmail.com>
+Date:   Wed Jul 14 13:09:07 2021 +0900
+
+    add def2,3
+
+[33mcommit 026b66025d423c8dff347022d48ced8eab7cdea1[m
+Author: agzero <kibudy2@gmail.com>
+Date:   Wed Jul 14 12:57:34 2021 +0900
+
+    add def
+
+[33mcommit fddfdec6e5ce3225195e4414db963201401aa8f3[m
+Author: agzero <kibudy2@gmail.com>
+Date:   Wed Jul 14 10:18:59 2021 +0900
+
+    add test
