@@ -4,8 +4,9 @@ import os
 import sympy
 import numpy as np
 import pandas as pd
+import natsort
 
-# 계산함수 =====================================================================================
+# 계산함수 ============================================================
 # 1. 눈썹
 def 눈썹() :
  
@@ -76,7 +77,6 @@ def 눈썹() :
 
     return avg_eb_sub, avg_vt, eyebrow_gradeint
 
-
 # -------------------------------------------------------------------
 # 2. 눈
 def 눈():
@@ -135,9 +135,6 @@ def 눈():
 
     return eye_avg_vt, eye_avg_hr, eye_ratio, eye_gradient, face_ratio
 
-
-
-
 # -------------------------------------------------------------------
 # 3. 코
 def nose():
@@ -161,7 +158,6 @@ def nose():
 
     return nose_length, nose_width, nostril
 
-
 # -------------------------------------------------------------------
 # 4. 입
 def Mouth() :
@@ -169,7 +165,7 @@ def Mouth() :
     #============================================================
     # 입크기
     
-    lip_width = round(abs(((upper_lips_dict['410'][0]- upper_lips_dict['62'][0])/2) * ((upper_lips_dict['38'][1]-lower_lips_dict['18'][1])/2) *3.14), 2)
+    lip_width = round(abs(((upper_lips_dict['410'][0] - upper_lips_dict['62'][0])/2) * ((upper_lips_dict['38'][1] - lower_lips_dict['18'][1])/2) * 3.14), 2)
 
 
     #=============================================================
@@ -204,8 +200,6 @@ def Mouth() :
 
 
     return lip_width, upperlipThickness, lowerlipThickness, lip_tail
-
-
 
 # -------------------------------------------------------------------
 # 5. 얼굴형
@@ -268,10 +262,6 @@ def 얼굴형(x, y):
     area = sympy.integrate(equ, (t, x[0], x[-1])) * 10
 
     return d1, d2, area
-
-
-
-
 
 
 # =====================================================================================
@@ -410,7 +400,10 @@ os.chdir(path)   # 해당 폴더로 이동
 
 # For static images:
 IMAGE_FILES = []
-files = os.listdir(path)
+files_tmp = os.listdir(path)
+# print(files_tmp)
+files = natsort.natsorted(files_tmp)
+# print(files)
 
 for file in files:
     if '.png' in file:
@@ -451,8 +444,7 @@ with mp_face_mesh.FaceMesh(
                 connections=mp_face_mesh.FACE_CONNECTIONS,
                 landmark_drawing_spec=drawing_spec,
                 connection_drawing_spec=drawing_spec)
-        # 이미지 저장되는 경로 주의!
-        # ./ vs ../ 차이!!!
+
         # cv2.imwrite('./tmp/annotated_image_' +
         #             str(idx) + '.png', annotated_image)
         # if not cv2.imwrite('./tmp/annotated_image_' + str(idx) + '.png', annotated_image):
@@ -553,13 +545,10 @@ with mp_face_mesh.FaceMesh(
 
                 cv2.putText(image, "{}".format(i + 1), (relative_x, relative_y - 2),
                             cv2.FONT_HERSHEY_SIMPLEX, 0.3, (255, 0, 0), 1)
-                
-                # # 넘버링 이미지 저장 코드(1~2분 걸림)
-                # cv2.imwrite('../numbering/numbering_' + str(idx) + '_th_pic_' +str(num) + '.png', image)
-            cv2.imwrite('./tmp/annotated_image_' +
-                        str(idx) + '.png', image)
-            if not cv2.imwrite('./tmp/annotated_image_' + str(idx) + '.png', image):
-                raise Exception("Could not write image")
+
+            # cv2.imwrite(f'./tmp/annotated_image_{str(idx)}.png', image)
+            # if not cv2.imwrite(f'./tmp/annotated_image_{str(idx)}.png', image):
+            #     raise Exception("Could not write image")
 
         # =====================================================================================================================================================
         # temp_ 사용하는 이유 - 400장으로 통계값 내기 위해서!
@@ -576,12 +565,6 @@ with mp_face_mesh.FaceMesh(
         temp_eye_desc_key = f'{idx}'
         temp_eye_desc = 눈()
         eye_desc_dict[f'{temp_eye_desc_key}'] = temp_eye_desc
-
-        temp_eye_desc_key = f'{idx}'
-        temp_eye_desc = 눈()
-        eye_desc_dict[f'{temp_eye_desc_key}'] = temp_eye_desc
-
-        # Face_area_dict
 
 
         # -----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -600,7 +583,6 @@ with mp_face_mesh.FaceMesh(
 
         # -----------------------------------------------------------------------------------------------------------------------------------------------------
         # 5. 얼굴형
-        print(f'{idx} 번째', faceLine_dict)
         faceLine_x = []
         faceLine_y = []
         for i in range(len(FaceLine_points)):
@@ -663,7 +645,7 @@ for face_parts_df in df_list:
 
 
 # CSV파일 저장
-df_all.to_csv('400_spec.csv', encoding='utf-8-sig')
+df_all.to_csv('Images_values.csv', encoding='utf-8-sig')
 # print('csv파일 저장 완료')
 
 
